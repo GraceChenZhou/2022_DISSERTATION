@@ -1,0 +1,170 @@
+%% thesis.tex 2014/04/11
+%
+% Based on sample files of unknown authorship.
+%
+% The Current Maintainer of this work is Paul Vojta.
+
+\documentclass{ucthesis}
+%\usepackage{biblatex}
+
+\newtheorem{theorem}{Theorem}
+% \newtheorem{proof}{Proof}
+\newtheorem{lemma}{Lemma}
+
+\newtheorem{definition}{Definition}
+% \theoremstyle{plain}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+
+%\def\var{\mbox{\textrm{var}}}
+%\def\Var{\mbox{\textrm{Var}}}
+%\def\Cov{\mbox{\textrm{Cov}}}
+%\def\cov{\mbox{\textrm{cov}}}
+%\def\trace{\mbox{\textrm{trace}}}
+
+\def\blankpage{%
+      \clearpage%
+      \thispagestyle{plain}%
+      \null%
+      \clearpage}
+
+\usepackage{amssymb}
+\usepackage[plain,noend]{algorithm2e}
+\usepackage{bm}
+\usepackage{graphicx, epstopdf, latexsym, amsmath, amsfonts, verbatim, amsbsy, pdflscape, multirow, calc, booktabs, color, amssymb, bbold, bbm, slashbox}
+\usepackage{enumitem}
+\usepackage[figuresright]{rotating}
+\usepackage{booktabs, caption}
+\usepackage[flushleft]{threeparttable}
+\usepackage{tabularx}
+\usepackage{titling}
+\usepackage{subcaption}
+\usepackage{natbib}
+\usepackage{afterpage}
+\usepackage{tabularx}
+%\usepackage{subfigure}
+\usepackage{subfiles}
+
+\usepackage{graphicx, psfrag, epsf}
+\usepackage{ulem}
+\usepackage{hyperref}
+\usepackage{amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\usepackage{dsfont}
+\usepackage{upgreek}
+\usepackage{dsfont}
+\usepackage{listings} %insert R inline code
+\usepackage[usenames, table, svgnames, dvipsnames]{pstricks}
+\usepackage{xcolor}
+% padckages:
+% \usepackage{algorithm}
+\usepackage{minted}
+\usepackage{float}
+\usepackage[noend]{algpseudocode}
+
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+ \def\dsp{\def\baselinestretch{2.0}\normalsize}
+ \dsp
+
+\setsecnumdepth{subsubsection}
+\settocdepth{subsubsection}
+
+\let\footruleskip\undefined
+\usepackage{fancyhdr}
+
+\pagestyle{plain}
+
+\begin{document}
+
+% Declarations for Front Matter
+
+\title{Multilevel Bayesian Joint Model in Hierarchically Structured Data}
+\author{Chen(Grace) Zhou}
+\degreesemester{July}
+\degreeyear{2022}
+\degree{Doctor of Philosophy}
+\chair{Seongho Song, Ph.D.}
+\othermembers{\vspace{5pt} 
+              Won Chang, Ph.D.\\\vspace{5pt}
+              Hang Joon Kim, Ph.D. \\\vspace{5pt}
+              Rhonda D. Szczesniak, Ph.D.\\\vspace{5pt}
+              Xia Wang, Ph.D.
+              }
+
+\field{M.S. University of Texas at Dallas}
+
+\pagenumbering{roman}
+\maketitle
+% Delete (or comment out) the \approvalpage line for the final version.
+%\approvalpage
+%\copyrightpage
+
+\newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+    Copyright \copyright\ 2022 by Chen (Grace) Zhou \\All Rights Reserved
+\end{center}
+
+\include{abstract}
+
+\begin{center}
+\vspace*{\stretch{1}}
+To the loving memory of my grandfather
+\vspace*{\stretch{1}}
+\end{center}
+
+% \blankpage
+
+\begin{acknowledgements}
+
+I praise my Lord, because He grant me, according to the riches of His glory, to be strengthened with power through His Spirit into my inner man (Eph.3:16), so that my Ph.D. program at the University of Cincinnati (UC) can finally be accomplished as it should be. Specifically, Jesus Christ has settled a cloud of people surrounding me, providing unlimited encouragements and loves.  
+
+I would like to express my deepest appreciation to my academic advisor, Professor Seongho Song, for guiding and shaping my research interest throughout my Ph.D. study. My sincere thanks also goes to my mentor, Dr. Rhonda D. Szczesniak, whose insight and experiences greatly steer me through considerable researches when work for Division of Biostatistics \& Epidemiology at Cincinnati Children’s Hospital Medical Center.
+
+I am very grateful to my committee members, Drs. Xia Wang, Hang Joon Kim and Won Chang for their valuable and helpful comments. In addition, I would also like to thank Dr. Yizao Wang, who is an excellent professor to care, support and mentor students.  
+
+A word of special thanks goes to all faculty/staff members in the Department of Mathematical Sciences-Division of Statistics and Data Science.  My Ph.D. program would not be completed without department's generous scholarship award and well-established learning system along with many useful resources, such as study lounge, computer lab, UC library, academic writing center, etc. I would also like to extend my thanks to the internship at Procter \& Gamble, my supervisor Bambi Rosenthal, who provides me the opportunity to build a solid skill in R Shiny apps. 
+
+Of course, I would like to give my biggest thanks to my families, specially to my dearest parents and grandma, for their unconditional love and unreserved support throughout my life. Two furry friends, Miss Lillian Zhou and Mr. Mooyah Zhou, deserve their favorite treats for their 24/7 accompany as a barrel of laughs. 
+
+Last but not the least, I want to express my sincere gratitude to my spiritual parents Brother David Chen and Sister Rainbow Gan, for their unceasing prayers and shepherding. Also sister May Hsu, for kindly providing me a lovely place to live during the pandemic. I appreciate my dear friends, Eunsun Yook, Anushka Palipana and an anonymous friend, who always stand by me. 
+
+The research in this dissertation was supported by grant R01 HL141286 from the National Institutes of Health. The paper presentation for Chapter \ref{chp3} at 2022 Joint Statistical Meetings (JSM) will be sponsored by Graduate Student Government (GSG) Research Fellowship Awards.  
+
+\end{acknowledgements}
+
+\begin{KeepFromToc}
+\begin{SingleSpace}
+\tableofcontents
+\end{SingleSpace}
+\end{KeepFromToc}
+\clearpage\listoffigures
+\clearpage\listoftables
+
+%\pagestyle{headings}
+
+%\newpage\renewcommand{\thepage}{\arabic{page}}\pagestyle{fancy}\fancyhf{} \cfoot{\thepage}\setcounter{page}{1}
+
+\clearpage
+\pagenumbering{arabic} \cfoot{\thepage}
+
+\include{chap1}
+\include{chap2}
+\include{chap3}
+\include{chap4}
+% \include{chap5}
+
+\bibliographystyle{spbasic}
+\begin{SingleSpace}
+\bibliography{reference}
+\end{SingleSpace}
+
+\appendix
+\include{appA}
+\include{appB}
+\include{appC}
+
+\end{document}

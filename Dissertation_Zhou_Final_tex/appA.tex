@@ -1,0 +1,276 @@
+\chapter{Appendix for Chapter \ref{chp1}} \label{app:a}
+\section{Data}
+
+\begin{minted}{R}
+# eight\_schools.data.R
+J <- 8
+y <- c(28, 8, -3, 7, -1, 1, 18, 12)
+sigma <- c(15, 10, 16, 11, 9, 11, 10, 18)
+\end{minted}
+
+\section{Stan program}
+\begin{minted}{R}
+# eight_schools_cp.stan
+
+data {
+  int<lower=0> J;
+  real y[J];
+  real<lower=0> sigma[J];
+}
+
+parameters {
+  real mu;
+  real<lower=0> tau;
+  real theta[J];
+}
+
+model {
+  mu ~ normal(0, 5);
+  tau ~ cauchy(0, 5);
+  theta ~ normal(mu, tau);
+  y ~ normal(theta, sigma);
+}
+
+# eight_schools_ncp.stan
+
+data {
+  int<lower=0> J;
+  real y[J];
+  real<lower=0> sigma[J];
+}
+
+parameters {
+  real mu;
+  real<lower=0> tau;
+  real theta_tilde[J];
+}
+
+transformed parameters{
+  real theta[J];
+  for (j in 1:J)
+    theta[j]=mu+tau*theta_tilde[j];
+}
+
+model {
+  mu ~ normal(0, 5);
+  tau ~ cauchy(0, 5);
+  theta_tilde ~ normal(0, 1);
+  y ~ normal(theta, sigma);
+}
+
+\end{minted}
+
+\section{R code}
+
+\begin{minted}{R}
+# Setup
+
+library(gridExtra) #v2.3
+library(bayesplot) #v1.8.1
+library(dplyr) #v1.0.5
+library(cmdstanr) #v0.4.0
+library(rstan) #v2.21.1
+options(mc.cores = parallel::detectCores())
+rstan_options(auto_write = TRUE)
+input_data <- read_rdump('eight_schools.data.R')
+
+# Fit
+
+##Default: adapt_delta=0.8, max_treedepth=10, iter=2000, warmup=1000
+###rstan
+    fit_cp <- rstan::stan('eight_schools_cp.stan', data = input_data,
+                   iter = 2000, warmup = 1000, chains = 2, seed = 2022)
+                   
+    rstan::get_elapsed_time(fit_cp)
+    
+    fit_ncp <- rstan::stan(file = 'eight_schools_ncp.stan', data = input_data,
+                   iter = 2000, warmup = 1000, chains = 2, seed = 2022)
+
+###cmdstanr
+  mod.cp <- cmdstanr::cmdstan_model('eight_schools_cp.stan')
+  fit_cp_cmd <- mod.cp$sample(data = input_data, chains = 2,
+                save_warmup = FALSE, parallel_chains = 2, refresh = 500, seed=2022)
+
+  mod.ncp <- cmdstanr::cmdstan_model('eight_schools_ncp.stan')
+  fit_ncp_cmd <- mod.ncp$sample(data = input_data, chains = 2,
+                save_warmup = FALSE, parallel_chains = 2, refresh = 500,
+                seed=2022)
+
+# Results
+##rstan
+tau_cp0 <- as.data.frame(extract(fit_cp, par='tau', permuted=TRUE))
+tau_cp <- tau_cp0 %>% 
+          rename(tau.cp=tau) %>% 
+          mutate(log.tau.cp=log(tau.cp))
+
+tau_ncp0 <- as.data.frame(extract(fit_ncp, par='tau', permuted=TRUE))
+tau_ncp <- tau_ncp0 %>% 
+           rename(tau.ncp=tau) %>% 
+           mutate(log.tau.ncp=log(tau.ncp))
+
+tau_all <- cbind(tau_cp,tau_ncp) %>% 
+            mutate(iter=1:2000,
+                 chain=rep(1:2,each=1000))
+
+tau_all$mean.cp <- sapply(tau_all$iter, function(n) mean(tau_all$log.tau.cp[1:n]))
+tau_all$mean.ncp <- sapply(tau_all$iter, function(n) mean(tau_all$log.tau.ncp[1:n]))
+
+tau_all$div.cp <- c(get_sampler_params(fit_cp, inc_warmup=FALSE)[[1]][,'divergent__'],
+                   get_sampler_params(fit_cp, inc_warmup=FALSE)[[2]][,'divergent__'])
+
+tau_all$div.ncp <- c(get_sampler_params(fit_ncp, inc_warmup=FALSE)[[1]][,'divergent__'],
+                    get_sampler_params(fit_ncp, inc_warmup=FALSE)[[2]][,'divergent__'])
+##cmdstanr
+tau_cp_cmd <- fit_cp_cmd$draws('tau',format='df') %>% 
+              rename(chain=.chain,
+                     tau.cp=tau) %>% 
+              mutate(log.tau.cp=log(tau.cp),
+                     iter=1:2000)
+
+tau_ncp_cmd <- fit_ncp_cmd$draws('tau',format='df') %>% 
+                rename(chain=.chain,
+                       tau.ncp=tau) %>% 
+                mutate(log.tau.ncp=log(tau.ncp),
+                       iter=1:2000)
+
+tau_all_cmd <- tau_cp_cmd %>% 
+              left_join(tau_ncp_cmd, by=c('chain','iter','.draw'))
+
+
+mean.cp <- sapply(tau_all_cmd$iter, function(n) mean(tau_all_cmd$log.tau.cp[1:n]))
+tau_all_cmd$mean.cp <- mean.cp
+
+mean.ncp <- sapply(tau_all_cmd$iter,function(n) mean(tau_all_cmd$log.tau.ncp[1:n]))
+tau_all_cmd$mean.ncp <-mean.ncp
+
+diag.cp <- fit_cp_cmd$sampler_diagnostics(format = "df")
+diag.ncp <- fit_ncp_cmd$sampler_diagnostics(format = "df")
+
+tau_all_cmd$div.cp <- diag.cp$divergent__
+tau_all_cmd$div.ncp <- diag.ncp$divergent__
+
+sum(tau_all$div.cp)/2000 #0.0115
+sum(tau_all$div.ncp)/2000 #0
+sum(tau_all_cmd$div.cp)/2000 #0.04
+sum(tau_all_cmd$div.ncp)/2000 # 0
+
+#Plot
+light.orange='#E69F00'
+orange='#D55E00'
+light.blue='#56B4E9'
+blue='#0072B2'
+
+#Figure 1.1
+{
+  jpeg("Chp1_mean_tau.jpg", width = 350, height = 300, units='mm', res = 300)
+  par(cex.lab=2, cex.axis=1.5)
+  par(mar = c(4, 5, 0.5, 0.5))
+  plot(NA, xlim=c(1,2000), ylim=c(0, 2),xlab="Iteration", ylab="mean of log(tau)")
+  points(tau_all$iter,tau_all$mean.cp,col=light.orange, pch=16,cex=2)
+  points(tau_all$iter,tau_all$mean.ncp,col=orange, pch=16,cex=2)
+  points(tau_all_cmd$iter,tau_all_cmd$mean.cp,col=light.blue, pch=16,cex=2)
+  points(tau_all_cmd$iter,tau_all_cmd$mean.ncp,col=blue, pch=16,cex=2)
+  abline(h=0.7657852, col='#009E73', lty="dashed", lwd=5)
+  
+  div_iter_cp <- tau_all$iter[which(tau_all$div.cp==1)]
+  div_mean_cp <- tau_all$mean.cp[which(tau_all$div.cp==1)]
+  div_iter_cp_cmd <- tau_all_cmd$iter[which(tau_all_cmd$div.cp==1)]
+  div_mean_cp_cmd <- tau_all_cmd$mean.cp[which(tau_all_cmd$div.cp==1)]
+  
+  points(div_iter, div_mean ,col="red", pch=4, lwd=2,cex=2)
+  points(div_iter_cp_cmd, div_mean_cp_cmd ,col="red", pch=4, lwd=2, cex=2)
+  
+  box(lwd=3)
+  legend("bottomright",
+         c("rstan: centered", "rstan: non-centered", 
+           "cmdstanr: centered", 'cmdstanr: non-centered','divergence','true'),
+         pch=c(rep(16,4), 4, NA), 
+         lty=c(NA,NA,NA,NA,NA,'dashed'), 
+         lwd=c(NA,NA,NA,NA,2,3),
+         col=c(light.orange, orange, light.blue, blue, 'red', "#009E73"),
+         cex=1.5, bty="n")
+  
+  dev.off()
+}
+
+#Figure 1.2
+color_scheme_set("brightblue")
+tt1 <- mean(rstan::get_elapsed_time(fit_cp))
+tt2 <- mean(rstan::get_elapsed_time(fit_ncp))
+tt3 <- mean(fit_cp_cmd$time()$chains$total)
+tt4 <- mean(fit_ncp_cmd$time()$chains$total)
+
+{
+pp1 <- bayesplot::mcmc_trace(tau_all,  pars = c("log.tau.cp")) +
+  labs(title = paste0("rstan: centered (",round(tt1,2),'s)')) +
+    theme(plot.title = element_text(hjust = 0.5,face='bold',size=20),
+          legend.title = element_text(size=12),
+          legend.text = element_text(size=12),
+          axis.text.x = element_text(size=15),
+          axis.text.y = element_text(size=15),
+          axis.title.x = element_text(size=15),
+          axis.title.y = element_text(size=15))
+
+pp2 <- bayesplot::mcmc_trace(tau_all,  pars = c("log.tau.ncp")) +
+  labs(title = paste0("rstan: non-centered (",round(tt2,2),'s)')) +
+  theme(plot.title = element_text(hjust = 0.5,face='bold',size=20),
+        legend.title = element_text(size=12),
+        legend.text = element_text(size=12),
+        axis.text.x = element_text(size=15),
+        axis.text.y = element_text(size=15),
+        axis.title.x = element_text(size=15),
+        axis.title.y = element_text(size=15))
+
+pp3 <- bayesplot::mcmc_trace(tau_all_cmd,  pars = c("log.tau.cp"))+
+  labs(title = paste0("cmdstanr: centered (",round(tt3,2),'s)')) +
+  theme(plot.title = element_text(hjust = 0.5,face='bold',size=20),
+        legend.title = element_text(size=12),
+        legend.text = element_text(size=12),
+        axis.text.x = element_text(size=15),
+        axis.text.y = element_text(size=15),
+        axis.title.x = element_text(size=15),
+        axis.title.y = element_text(size=15))
+
+pp4 <- bayesplot::mcmc_trace(tau_all_cmd,  pars = c("log.tau.ncp"))+
+  labs(title = paste0("cmdstanr: non-centered (",round(tt4,2),'s)')) +
+  theme(plot.title = element_text(hjust = 0.5,face='bold',size=20),
+        legend.title = element_text(size=12),
+        legend.text = element_text(size=12),
+        axis.text.x = element_text(size=15),
+        axis.text.y = element_text(size=15),
+        axis.title.x = element_text(size=15),
+        axis.title.y = element_text(size=15))
+
+  pp.all=gridExtra::grid.arrange(pp1, pp2, pp3, pp4, nrow = 2, ncol=2)
+  ggsave('Chp1_trace_tau.jpg', plot = pp.all, scale = 1, width = 35, 
+         height = 30, units = c("cm"), dpi = 300)
+}
+
+\end{minted}
+
+\section{System}
+
+\begin{table}[H] 
+\centering
+\caption{Processing system}
+\begin{tabular}{c|c}
+\toprule
+ & \bf Simulated data \\
+\hline
+Platform & x86\_64-apple-darwin17.0 (64-bit) \\
+\hline
+Running under & macOS Big Sur 10.16 \\
+\hline
+R version & 4.0.5 (2021-03-31) \\
+\hline
+bayesplot & v1.8.1\\
+dplyr & v1.0.5\\
+gridExtra & v2.3\\
+cmdstanr & v0.4.0\\
+CmdStan & v2.29.2\\
+rstan & v2.21.1\\
+
+\bottomrule
+\end{tabular}
+
+\end{table}

@@ -1,0 +1,541 @@
+\begin{thebibliography}{95}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Andrinopoulou et~al.(2017)Andrinopoulou, Rizopoulos, Takkenberg, and
+  Lesaffre}]{Andrinopoulou2017}
+Andrinopoulou ER, Rizopoulos D, Takkenberg JJ, Lesaffre E (2017) Combined
+  dynamic predictions using joint models of two longitudinal outcomes and
+  competing risk data. Statistical Methods in Medical Research
+  26(4):1787–1801, \doi{10.1177/0962280215588340}
+
+\bibitem[{Andrinopoulou et~al.(2018)Andrinopoulou, Eilers, Takkenberg, and
+  Rizopoulos}]{Andrinopoulou2018}
+Andrinopoulou ER, Eilers P, Takkenberg J, Rizopoulos D (2018) Improved dynamic
+  predictions from joint models of longitudinal and survival data with
+  time-varying effects using p-splines. Biom 74:685--693,
+  \doi{https://doi-org.uc.idm.oclc.org/10.1111/biom.12814}
+
+\bibitem[{Andrinopoulou et~al.(2021)Andrinopoulou, Harhay, Ratcliffe, and
+  Rizopoulos}]{Andrinopoulou2021}
+Andrinopoulou ER, Harhay MO, Ratcliffe SJ, Rizopoulos D (2021) Reflection on
+  modern methods: Dynamic prediction using joint models of longitudinal and
+  time-to-event data. International Journal of Epidemiology 50(5):1731–1743,
+  \doi{https://doi.org/10.1093/ije/dyab047}
+
+\bibitem[{Asar et~al.(2015)Asar, Ritchie, Kalra, and Diggle}]{Asar2015}
+Asar {\"O}, Ritchie J, Kalra PA, Diggle PJ (2015) Joint modelling of repeated
+  measurement and time-to-event data: an introductory tutorial. International
+  journal of epidemiology 44(1):334–344,
+  \doi{https://doi.org/10.1093/ije/dyu262}
+
+\bibitem[{Barrett et~al.(2019)Barrett, Huille, Parker, Yano, and
+  Griswold}]{Barrett2019}
+Barrett J, Huille R, Parker R, Yano Y, Griswold M (2019) Estimating the
+  association between blood pressure variability and cardiovascular disease: An
+  application using the aric study. Statistics in Medicine 38:1855–1868,
+  \doi{https://doi.org/10.1002/sim.8074}
+
+\bibitem[{Bayarri and Berger(2004)}]{Bayarri2004}
+Bayarri MJ, Berger JO (2004) The interplay of bayesian and frequentist
+  analysis. Statistical Science 19(1):58–80, \doi{10.1214/088342304000000116}
+
+\bibitem[{Betancourt(2017)}]{Betancourt2017}
+Betancourt M (2017) Diagnosing biased inference with divergences.
+  \url{https://mc-stan.org/users/documentation/case-studies/divergences_and_bias.html},
+  accessed: 2022-5-12
+
+\bibitem[{Betancourt and Girolami(2015)}]{Betancourt2015}
+Betancourt M, Girolami M (2015) Current Trends in Bayesian Methodology with
+  Applications, Chapman \& Hall/CRC Press, Internet resource, chap Hamiltonian
+  Monte Carlo for Hierarchical Models. First edition
+
+\bibitem[{Betancourt and Girolami(2013)}]{Betancourt2013}
+Betancourt MJ, Girolami M (2013) Hamiltonian monte carlo for hierarchical
+  models. \doi{10.48550/ARXIV.1312.0906},
+  \urlprefix\url{https://arxiv.org/abs/1312.0906}
+
+\bibitem[{Brilleman et~al.(2018)Brilleman, Crowther, Moreno-Betancur, {Buros
+  Novik}, and R~Wolfe}]{Brilleman2018}
+Brilleman S, Crowther M, Moreno-Betancur M, {Buros Novik} J, R~Wolfe R (2018)
+  Joint longitudinal and time-to-event models via {Stan}.
+  \urlprefix\url{https://github.com/stan-dev/stancon_talks/}, stanCon 2018.
+  10-12 Jan 2018. Pacific Grove, CA, USA.
+
+\bibitem[{Brilleman et~al.(2019)Brilleman, Crowther, Moreno-Betancur, Novik,
+  Dunyak, Al-Huniti, Fox, Hammerbacher, and Wolfe}]{Brilleman2019}
+Brilleman SL, Crowther MJ, Moreno-Betancur M, Novik JB, Dunyak J, Al-Huniti N,
+  Fox R, Hammerbacher J, Wolfe R (2019) Joint longitudinal and time-to-event
+  models for multilevel hierarchical data. Statistical Methods in Medical
+  Research 28(12):3502–3515, \doi{10.1177/0962280218808821}
+
+\bibitem[{Brombin et~al.(2016)Brombin, Serio, and Rancoita}]{Brombin2016}
+Brombin C, Serio CD, Rancoita PM (2016) Joint modeling of hiv data in
+  multicenter observational studies: A comparison among different approaches.
+  Statistical Methods in Medical Research 25(6):2472–2487,
+  \doi{https://doi.org/10.1177/0962280214526192}
+
+\bibitem[{Brooks et~al.(2011)Brooks, Gelman, Jones, and Meng}]{handbook2011}
+Brooks S, Gelman A, Jones G, Meng XL (2011) Handbook of Markov Chain Monte
+  Carlo. CRC press
+
+\bibitem[{Cox and Snell(1968)}]{Cox1968}
+Cox DR, Snell EJ (1968) A general definition of residuals. Journal of the Royal
+  Statistical Society Series B (Methodological) 30(2):248–75,
+  \urlprefix\url{http://www.jstor.org/stable/2984505}
+
+\bibitem[{Deep et~al.(2020)Deep, Veeramani, and Zhou}]{Deep2020}
+Deep A, Veeramani D, Zhou D (2020) Event prediction for individual unit based
+  on recurrent event data collected in teleservice systems. IEEE Transactions
+  on Reliability 69(1):216--227, \doi{10.1109/TR.2019.2909471}
+
+\bibitem[{Diggle et~al.(2015)Diggle, Sousa, and Asar}]{Diggle2015}
+Diggle P, Sousa I, Asar O (2015) Real-time monitoring of progression towards
+  renal failure in primary care patients. Biostatistics 16(3):522--536,
+  \doi{https://doi.org/10.1002/bimj.201900044}
+
+\bibitem[{Gabry and Cešnovar(2022)}]{Gabry2022}
+Gabry J, Cešnovar R (2022) cmdstanr: R Interface to 'CmdStan'.
+  Https://mc-stan.org/cmdstanr/, https://discourse.mc-stan.org
+
+\bibitem[{Gabry and Mahr(2020)}]{bayesplot2020}
+Gabry J, Mahr T (2020) bayesplot: Plotting for bayesian models.
+  \urlprefix\url{https://mc-stan.org/bayesplot}, r package version 1.7.2
+
+\bibitem[{Gelfand and Smith(1990)}]{Gelfand1990}
+Gelfand AE, Smith AFM (1990) Sampling-based approaches to calculating marginal
+  densities. Journal of the American Statistical Association 85(410):398–409,
+  \doi{https://doi.org/10.2307/2289776}
+
+\bibitem[{Gelman(2006)}]{Gelman2006}
+Gelman A (2006) Prior distributions for variance parameters in hierarchical
+  models (comment on article by browne and draper). Bayesian Anal
+  1(3):515--534, \doi{https://doi.org/10.1214/06-BA117A}
+
+\bibitem[{Gelman(2020)}]{Gelman2020}
+Gelman A (2020) Prior choice recommendations.
+  \url{https://github.com/stan-dev/stan/wiki/Prior-Choice-Recommendations},
+  accessed: Apr 17, 2020
+
+\bibitem[{Gelman and Carlin(2014)}]{Gelman2014b}
+Gelman A, Carlin J (2014) Beyond power calculations: Assessing type s (sign)
+  and type m (magnitude) errors. Perspectives on psychological science : a
+  journal of the Association for Psychological Science 9(6):641–651,
+  \doi{https://doi.org/10.1177/1745691614551642}
+
+\bibitem[{Gelman and Rubin(1992)}]{Gelman1992}
+Gelman A, Rubin D (1992) Inference from iterative simulation using multiple
+  sequences. Statistical Science 7(4):457--511, \doi{10.1214/ss/1177011136}
+
+\bibitem[{Gelman et~al.(2013{\natexlab{a}})Gelman, Carlin, Stern, Dunson,
+  Vehtari, and Rubin}]{Gelman2013a}
+Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB
+  (2013{\natexlab{a}}) Bayesian Data Analysis, Chapman \& Hall/CRC Press,
+  London, chap 4 Hierarchical models, pp 111--148. Third edition
+
+\bibitem[{Gelman et~al.(2013{\natexlab{b}})Gelman, Carlin, Stern, Dunson,
+  Vehtari, and Rubin}]{Gelman2013b}
+Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB
+  (2013{\natexlab{b}}) Bayesian Data Analysis, Chapman \& Hall/CRC Press,
+  London, chap 11.4 Inference and Assessing Convergence, p 285. Third edition
+
+\bibitem[{Gelman et~al.(2014)Gelman, Hwang, and Vehtari}]{Gelman2014}
+Gelman A, Hwang J, Vehtari A (2014) Understanding predictive information
+  criteria for bayesian models. Stat Comput 24:997--1016,
+  \doi{https://doi.org/10.1007/s11222-013-9416-2}
+
+\bibitem[{Geman and Geman(1984)}]{Geman1984}
+Geman S, Geman D (1984) Stochastic relaxation, gibbs distributions, and the
+  bayesian restoration of images. IEEE Transactions on Pattern Analysis and
+  Machine Intelligence PAMI-6(6):721--741, \doi{10.1109/TPAMI.1984.4767596}
+
+\bibitem[{Geyer(1992)}]{Geyer1992}
+Geyer CJ (1992) Practical markov chain monte carlo. Statist Sci 7(4):473 --
+  483, \doi{https://doi.org/10.1214/ss/1177011137}
+
+\bibitem[{Goodrich et~al.(2020)Goodrich, Gabry, Ali, and
+  Brilleman}]{Goodrich2020}
+Goodrich B, Gabry J, Ali I, Brilleman S (2020) rstanarm: {Bayesian} applied
+  regression modeling via {Stan}. \urlprefix\url{https://mc-stan.org/rstanarm},
+  r package version 2.21.1
+
+\bibitem[{Hackenberger(2019)}]{Hackenberger2019}
+Hackenberger BK (2019) Bayes or not bayes, is this the question? Croatian
+  medical journal 60(1):50--52, \doi{10.3325/cmj.2019.60.50}
+
+\bibitem[{Han et~al.(2007)Han, Slate, and Peña}]{Han2007}
+Han J, Slate E, Peña E (2007) Parametric latent class joint model for a
+  longitudinal biomarker and recurrent events. Stat Med 26(29):5285--302,
+  \doi{10.1002/sim.2915}
+
+\bibitem[{Harhay et~al.(2020)Harhay, Au, Dell, Gould, Redline, Ryerson, and
+  Cooke}]{Harhay2020}
+Harhay MO, Au DH, Dell SD, Gould MK, Redline S, Ryerson CJ, Cooke CR (2020)
+  Methodologic guidance and expectations for the development and reporting of
+  prediction models and causal inference studies. Annals of the American
+  Thoracic Society 17(6):679--682,
+  \doi{https://doi.org/10.1513/AnnalsATS.202002-141ED}
+
+\bibitem[{Hastings(1970)}]{Hastings1970}
+Hastings WK (1970) Monte carlo sampling methods using markov chains and their
+  applications. Biometrika 57(1):97–109,
+  \doi{https://doi.org/10.2307/2334940}
+
+\bibitem[{Heinze and Dunkler(2017)}]{Heinze2017}
+Heinze G, Dunkler D (2017) Five myths about variable selection. Transplant
+  international : official journal of the European Society for Organ
+  Transplantation 30(1):6–10, \doi{https://doi.org/10.1111/tri.12895}
+
+\bibitem[{Henderson et~al.(2000)Henderson, Diggle, and Dobson}]{Henderson2000}
+Henderson R, Diggle P, Dobson A (2000) Joint modelling of longitudinal
+  measurements and event time data. Biostatistics 1(4):465--480,
+  \doi{10.1093/biostatistics/1.4.465}
+
+\bibitem[{Hickey et~al.(2018)Hickey, Philipson, Jorgensen, and R}]{Hickey2018}
+Hickey G, Philipson P, Jorgensen A, R KD (2018) Joint models of longitudinal
+  and time-to-event data with more than one event time outcome: A review. Int J
+  Biostat 14(1):3502–3515, \doi{10.1515/ijb-2017-0047}
+
+\bibitem[{Hickey et~al.(2016)Hickey, Philipson, Jorgensen, and
+  Kolamunnage-Dona}]{Hickey2016}
+Hickey GL, Philipson P, Jorgensen A, Kolamunnage-Dona R (2016) Joint modelling
+  of time-to-event and multivariate longitudinal outcomes: recent developments
+  and issues. BMC Med Res Methodol 16(117),
+  \doi{https://doi-org.proxy.libraries.uc.edu/10.1186/s12874-016-0212-5}
+
+\bibitem[{Hocking(1976)}]{Hocking1976}
+Hocking RR (1976) A biometrics invited paper. the analysis and selection of
+  variables in linear regression. Biometrics 32(1):1–49,
+  \doi{https://doi.org/10.2307/2529336}
+
+\bibitem[{Hoffman and Gelman(2011)}]{Hoffman2011}
+Hoffman MD, Gelman A (2011) The no-u-turn sampler: Adaptively setting path
+  lengths in hamiltonian monte carlo. \doi{10.48550/ARXIV.1111.4246},
+  \urlprefix\url{https://arxiv.org/abs/1111.4246}
+
+\bibitem[{Horrocks and van Den~Heuvel(2009)}]{Horrocks2009}
+Horrocks J, van Den~Heuvel MJ (2009) Prediction of pregnancy: a joint model for
+  longitudinal and binary data. Bayesian Anal 4(3):523--538,
+  \doi{https://doi.org/10.1214/09-BA419}
+
+\bibitem[{Ibrahim et~al.(2010)Ibrahim, Chu, and Chen}]{Ibrahim2010}
+Ibrahim J, Chu H, Chen L (2010) Basic concepts and methods for joint models of
+  longitudinal and survival data. J Clin Oncol 28(16):2796–2801,
+  \doi{https://doi.org/10.1200/JCO.2009.25.0654}
+
+\bibitem[{Jiang and Dey(2015)}]{Upadhyay2015}
+Jiang X, Dey K (2015) Current Trends in Bayesian Methodology with Applications,
+  Chapman and Hall/CRC, New York, chap 16: Symmetric Power Link with Ordinal
+  Response Model
+
+\bibitem[{Jiang et~al.(2013)Jiang, Dey, Prunier, Wilson, and
+  Holsinger}]{Jiang2013}
+Jiang X, Dey DK, Prunier R, Wilson AM, Holsinger KE (2013) A new class of
+  flexible link functions with application to species co-occurrence in cape
+  floristic region. Ann Appl Stat 7(4):2180--2204,
+  \doi{https://doi.org/10.1214/13-AOAS663}
+
+\bibitem[{Kaplan and Meier(1958)}]{Kaplan1958}
+Kaplan EL, Meier P (1958) Nonparametric estimation from incomplete
+  observations. Journal of the American Statistical Association
+  53(282):457–481
+
+\bibitem[{Kim et~al.(2012)Kim, Zeng, Chambless, and Li}]{Kim2012}
+Kim S, Zeng D, Chambless L, Li Y (2012) Joint models of longitudinal data and
+  recurrent events with informative terminal event. Stat Biosci 4(2):262--281,
+  \doi{10.1007/s12561-012-9061-x}
+
+\bibitem[{Knapp et~al.(2016)Knapp, Fink, Goss, Sewall, Ostrenga, Dowd, Elbert,
+  Petren, and BC}]{Knapp2016}
+Knapp E, Fink A, Goss C, Sewall A, Ostrenga J, Dowd C, Elbert A, Petren K, BC M
+  (2016) The cystic fibrosis foundation patient registry. design and methods of
+  a national observational disease registry. Ann Am Thorac Soc 13(7):1173--9,
+  \doi{10.1513/AnnalsATS.201511-781OC}
+
+\bibitem[{Król et~al.(2016)Król, Ferrer, Pignon, Proust-Lima, Ducreux,
+  Bouché, Michiels, and Rondeau}]{Krol2016}
+Król A, Ferrer L, Pignon JP, Proust-Lima C, Ducreux M, Bouché O, Michiels S,
+  Rondeau V (2016) Joint model for left-censored longitudinal data, recurrent
+  events and terminal event: Predictive abilities of tumor burden for cancer
+  evolution with application to the ffcd 2000-05 trial. Biometrics
+  72(3):907--916, \doi{10.1111/biom.12490}
+
+\bibitem[{Laird and Ware(1982)}]{Laird1982}
+Laird N, Ware J (1982) Random-effects models for longitudinal data. Biometrics
+  38(4):963--974, pMID: 7168798
+
+\bibitem[{Laurie(1997)}]{Laurie1997}
+Laurie D (1997) Calculation of gauss-kronrod quadrature rules. Math Comput
+  66(219):1133--45
+
+\bibitem[{Lewandowski et~al.(2009)Lewandowski, Dorota, and
+  Harry}]{Lewandowski2009}
+Lewandowski D, Dorota K, Harry J (2009) Generating random correlation matrices
+  based on vines and extended onion method. Journal of Multivariate Analysis
+  100:1989–2001
+
+\bibitem[{Li et~al.(2017)Li, Keogh, Clancy, and Szczesniak}]{Li2017}
+Li D, Keogh R, Clancy J, Szczesniak R (2017) Flexible semiparametric joint
+  modeling:an application to estimate individual lung function decline and risk
+  of pulmonary exacerbations in cystic fibrosis. Emerg Themes Epidemiol 14(13),
+  \doi{10.1186/s12982-017-0067-1}
+
+\bibitem[{Liu et~al.(2008)Liu, Huang, and O'Quigley}]{Liu2008}
+Liu L, Huang X, O'Quigley J (2008) Analysis of longitudinal data in the
+  presence of informative observational times and a dependent terminal event,
+  with application to medical cost data. Biometrics 64(3):950--958,
+  \doi{10.1111/j.1541-0420.2007.00954.x}
+
+\bibitem[{Luo(2015)}]{Luo2014a}
+Luo S (2015) A bayesian approach to joint analysis of multivariate longitudinal
+  data and parametric accelerated failure time. Statistics in medicine
+  33(4):580–594, \doi{https://doi.org/10.1002/sim.5956}
+
+\bibitem[{Luo and Wang(2014)}]{Luo2014}
+Luo S, Wang J (2014) Bayesian hierarchical model for multiple repeated measures
+  and survival data: an application to parkinson's disease. Stat Med
+  33(24):4279--4291, \doi{10.1002/sim.6228}
+
+\bibitem[{Mauguen et~al.(2013)Mauguen, Rachet, Mathoulin-Pélissier, MacGrogan,
+  Laurent, and Rondeau}]{Mauguen2013}
+Mauguen A, Rachet B, Mathoulin-Pélissier S, MacGrogan G, Laurent A, Rondeau V
+  (2013) Dynamic prediction of risk of death using history of cancer
+  recurrences in joint frailty models. Statist Med 32:5366--5380,
+  \doi{https://doi-org.uc.idm.oclc.org/10.1002/sim.5980}
+
+\bibitem[{Metropolis et~al.(1953)Metropolis, Rosenbluth, Rosenbluth, Teller,
+  and Teller}]{Metropolis1953}
+Metropolis N, Rosenbluth AW, Rosenbluth MN, Teller AH, Teller E (1953) Equation
+  of state calculations by fast computing machines. Journal of Chemical Physics
+  21:1087–1092, \doi{https://doi.org/10.1063/1.1699114}
+
+\bibitem[{Musoro et~al.(2015)Musoro, Geskus, and Zwinderman}]{Musoro2015}
+Musoro J, Geskus R, Zwinderman A (2015) A joint model for repeated events of
+  different types and multiple longitudinal outcomes with application to a
+  follow-up study of patients after kidney transplant. Biom J 57(2):185--200,
+  \doi{10.1002/bimj.201300167}
+
+\bibitem[{Neal(2011)}]{Neal2011}
+Neal R (2011) MCMC Using Hamiltonian Dynamics, Chapman Hall/CRC, pp 116--62
+
+\bibitem[{Piccorelli and Schluchter(2012)}]{Piccorelli2012}
+Piccorelli A, Schluchter M (2012) Jointly modeling the relationship between
+  longitudinal and survival data subject to left truncation with applications
+  to cystic fibrosis. Stat Med 31(29):3931--3945, \doi{10.1002/sim.5469}
+
+\bibitem[{Proust-Lima and Taylor(2017)}]{Proust-Lima2009}
+Proust-Lima C, Taylor JM (2017) Development and validation of a dynamic
+  prognostic tool for prostate cancer recurrence using repeated measures of
+  posttreatment psa: a joint modeling approach. Biostatistics 10(3):535–549,
+  \doi{https://doi.org/10.1093/biostatistics/kxp009}
+
+\bibitem[{Proust-Lima et~al.(2014)Proust-Lima, Séne, Taylor, and
+  Jacqmin-Gadda}]{Proust-Lima2014}
+Proust-Lima C, Séne M, Taylor JM, Jacqmin-Gadda H (2014) Joint latent class
+  models for longitudinal and time-to-event data: a review. Statistical methods
+  in medical research 23(1):74–90,
+  \doi{https://doi.org/10.1177/0962280212445839}
+
+\bibitem[{Quanjer et~al.(2012)Quanjer, Stanojevic, Cole, Baur, L., Culver,
+  Enright, Hankinson, Ip, Zheng, Stocks, and the ERS Global Lung
+  Function~Initiative}]{Quanjer2012}
+Quanjer PH, Stanojevic S, Cole TJ, Baur X, L HG, Culver BH, Enright PL,
+  Hankinson JL, Ip MS, Zheng J, Stocks J, the ERS Global Lung
+  Function~Initiative (2012) Multi-ethnic reference values for spirometry for
+  the 3–95-yr age range: the global lung function 2012 equations. European
+  Respiratory Society 40(6):1324--1343,
+  \doi{https://doi.org/10.1183/09031936.00080312}
+
+\bibitem[{{R Core Team}(2020)}]{R2020}
+{R Core Team} (2020) R: A Language and Environment for Statistical Computing. R
+  Foundation for Statistical Computing, Vienna, Austria,
+  \urlprefix\url{https://www.R-project.org/}
+
+\bibitem[{Ren et~al.(2021)Ren, Wang, and Luo}]{Ren2021}
+Ren X, Wang J, Luo S (2021) Dynamic prediction using joint models of
+  longitudinal and recurrent event data: a bayesian perspective. Biostatistics
+  \& Epidemiology 5(2):250--266, \doi{10.1080/24709360.2019.1693198}
+
+\bibitem[{Riley et~al.(2020)Riley, Ensor, Snell, Harrell, Martin, Reitsma,
+  Moons, Collins, and van Smeden}]{Riley2020}
+Riley RD, Ensor J, Snell KIE, Harrell FE, Martin GP, Reitsma JB, Moons KGM,
+  Collins G, van Smeden M (2020) Calculating the sample size required for
+  developing a clinical prediction model. BMJ p 368,
+  \doi{https://doi.org/10.1136/bmj.m441}
+
+\bibitem[{Rizopoulos(2011)}]{Rizopoulos2011}
+Rizopoulos D (2011) Dynamic predictions and prospective accuracy in joint
+  models for longitudinal and time-to-event data. Biometrics 67(3):819--829,
+  \doi{10.1111/j.1541-0420.2010.01546.x}
+
+\bibitem[{Rizopoulos(2012{\natexlab{a}})}]{Rizopoulos2012}
+Rizopoulos D (2012{\natexlab{a}}) Joint Models for Longitudinal and
+  Time-to-Event Data: With Applications in R. Chapman and Hall/CRC, Boca Raton,
+  FL
+
+\bibitem[{Rizopoulos(2012{\natexlab{b}})}]{Rizopoulos2012d}
+Rizopoulos D (2012{\natexlab{b}}) Joint Models for Longitudinal and
+  Time-to-Event Data: With Applications in R, Chapman and Hall/CRC, Boca Raton,
+  FL, chap~6, pp 145--169
+
+\bibitem[{Rizopoulos(2012{\natexlab{c}})}]{Rizopoulos2012b}
+Rizopoulos D (2012{\natexlab{c}}) Stratified Relative Risk Models, Chapman and
+  Hall/CRC, Boca Raton, FL, chap 5.3, pp 119--122
+
+\bibitem[{Rizopoulos et~al.(2014)Rizopoulos, Hatfield, Carlin, and
+  Takkenberg}]{Rizopoulos2014}
+Rizopoulos D, Hatfield LA, Carlin BP, Takkenberg JJM (2014) Combining dynamic
+  predictions from joint models for longitudinal and time-to-event data using
+  bayesian model averaging. Journal of the American Statistical Association
+  109(508):1385--1397, \doi{10.1080/01621459.2014.931236}
+
+\bibitem[{Rizopoulos et~al.(2022)Rizopoulos, Papageorgiou, and {Miranda
+  Afonso}}]{Rizopoulos2022}
+Rizopoulos D, Papageorgiou G, {Miranda Afonso} P (2022) JMbayes2: Extended
+  Joint Models for Longitudinal and Time-to-Event Data.
+  Https://drizopoulos.github.io/JMbayes2/,
+  https://github.com/drizopoulos/JMbayes2
+
+\bibitem[{Rondeau et~al.(2019)Rondeau, Gonzalez, Mazroui, Mauguen, Diakite,
+  Laurent, Lopez, Kr\'{o}l, and Sofeu}]{Rondeau2019}
+Rondeau V, Gonzalez JR, Mazroui Y, Mauguen A, Diakite A, Laurent A, Lopez M,
+  Kr\'{o}l A, Sofeu CL (2019) {frailtypack}: General Frailty Models: Shared,
+  Joint and Nested Frailty Models with Prediction; Evaluation of Failure-Time
+  Surrogate Endpoints.
+  \urlprefix\url{https://CRAN.R-project.org/package=frailtypack}, {R} package
+  version 3.0.3
+
+\bibitem[{{RStudio, Inc}(2013)}]{shiny2013}
+{RStudio, Inc} (2013) Easy web applications in R. URL:
+  \url{http://www.rstudio.com/shiny/}
+
+\bibitem[{Rubin(1981)}]{Rubin1981}
+Rubin DB (1981) Estimation in parallel randomized experiments. Journal of
+  Educational and Behavioral Statistics 6(4):377--401,
+  \urlprefix\url{https://EconPapers.repec.org/RePEc:sae:jedbes:v:6:y:1981:i:4:p:377-401}
+
+\bibitem[{Shen et~al.(2016)Shen, Huang, and Guan}]{Shen2016}
+Shen Y, Huang H, Guan Y (2016) A conditional estimating equation approach for
+  recurrent event data with additional longitudinal information. Stat Med
+  35(24):4306--4319, \doi{10.1002/sim.7001}
+
+\bibitem[{Smedinga et~al.(2017)Smedinga, Steyerberg, Beukers, Klaveren,
+  Zwarthoff, and Vergouwe}]{Smedinga2017}
+Smedinga H, Steyerberg EW, Beukers W, Klaveren Dv, Zwarthoff EC, Vergouwe Y
+  (2017) Prediction of multiple recurrent events: A comparison of extended cox
+  models in bladder cancer. American Journal of Epidemiology 186(5):612–623,
+  \doi{10.1093/aje/kwx133}
+
+\bibitem[{Sorensen et~al.(2016)Sorensen, Hohenstein, and
+  Vasishth}]{Sorensen2016}
+Sorensen T, Hohenstein S, Vasishth S (2016) Bayesian linear mixed models using
+  stan: A tutorial for psychologists, linguists, and cognitive scientists. the
+  quantitative methods for psychology. The Quantitative Methods for Psychology
+  12(3):175–200, \doi{10.20982/tqmp.12.3.p175}
+
+\bibitem[{Spiegelhalter et~al.(2002)Spiegelhalter, Best, Carlin, and van~der
+  Linde}]{Spiegelhalter2002}
+Spiegelhalter DJ, Best NG, Carlin BP, van~der Linde A (2002) Bayesian measures
+  of model complexity and fit. J Roy Stat Soc B 64(4):583--639,
+  \doi{https://doi.org/10.1111/1467-9868.00353}
+
+\bibitem[{{Stan Development Team}(2011-2019)}]{StanManual}
+{Stan Development Team} (2011-2019) Stan Modeling Language Users Guide and
+  Reference Manual. \urlprefix\url{https://mc-stan.org}, version 2.29
+
+\bibitem[{{Stan Development Team}(2020)}]{Rstan2020}
+{Stan Development Team} (2020) Rstan: the R interface to Stan. R Foundation for
+  Statistical Computing, Vienna, Austria, \urlprefix\url{http://mc-stan.org/},
+  r package version 2.21.2
+
+\bibitem[{Su et~al.(2020)Su, Wang, and Szczesniak}]{Su2020}
+Su W, Wang X, Szczesniak RD (2020) Flexible link functions in a joint
+  hierarchical gaussian process model. Biometrics pp 1--11,
+  \doi{https://doi.org/10.1111/biom.13291}
+
+\bibitem[{Su et~al.(2021)Su, Wang, and Szczesniak}]{Su2021}
+Su W, Wang X, Szczesniak RD (2021) Risk factor identification in cystic
+  fibrosis by flexible hierarchical joint models. Statistical Methods in
+  Medical Research 30(1):244--260,
+  \doi{https://doi.org/10.1177/0962280220950369}
+
+\bibitem[{Szczesniak et~al.(2017)Szczesniak, Li, Su, Brokamp, Pestian, Seid,
+  and Clancy}]{Szczesniak2017}
+Szczesniak R, Li D, Su W, Brokamp C, Pestian J, Seid M, Clancy J (2017)
+  Phenotypes of rapid cystic fibrosis lung disease progression during
+  adolescence and young adulthood. American Journal of Respiratory \& Critical
+  Care Medicine 196:471--478
+
+\bibitem[{Szczesniak et~al.(2020)Szczesniak, Su, Brokamp, Ruth, Pestian, Seid,
+  Diggle, and Clancy}]{Szczesniak2020}
+Szczesniak R, Su W, Brokamp C, Ruth H, Pestian J, Seid M, Diggle P, Clancy J
+  (2020) Dynamic predictive probabilities to monitor rapid cystic fibrosis
+  disease progression. Statistics in Medicine 39:740--756,
+  \doi{https://doi.org/10.1002/sim.8443}
+
+\bibitem[{Szczesniak et~al.(2013)Szczesniak, McPhail, Duan, Macaluso, Amin, and
+  Clancy}]{Szczesniak2014}
+Szczesniak RD, McPhail GL, Duan LL, Macaluso M, Amin RS, Clancy JP (2013) A
+  semiparametric approach to estimate rapid lung function decline in cystic
+  fibrosis. Annals of Epidemiology 23(12):771--777,
+  \doi{https://doi.org/10.1016/j.annepidem.2013.08.009.}
+
+\bibitem[{Tanner and Wong(1987)}]{Tanner1987}
+Tanner MA, Wong WH (1987) The calculation of posterior distributions by data
+  augmentation (with discussion). Journal of the American Statistical
+  Association 82:528–550, \doi{https://www.jstor.org/stable/2289457}
+
+\bibitem[{Taylor-Robinson et~al.(2012)Taylor-Robinson, Whitehead, Diderichsen,
+  Olesen, Pressler, Smyth, and Diggle}]{TaylorRobinson2012}
+Taylor-Robinson D, Whitehead M, Diderichsen F, Olesen H, Pressler T, Smyth R,
+  Diggle P (2012) Understanding the natural progression in \%fev decline in
+  patients with cystic fibrosis: a longitudinal study. Thorax 67:860--866
+
+\bibitem[{Tierney(1994)}]{Tierney1994}
+Tierney L (1994) Markov chains for exploring posterior distributions. Ann
+  Statist 22(4):1701 -- 1728, \doi{https://doi.org/10.1214/aos/1176325750}
+
+\bibitem[{Tsiatis and Davidian(2004)}]{Tsiatis2004}
+Tsiatis AA, Davidian M (2004) Joint modeling of longitudinal and time-to-event
+  data: An overview. Statistica Sinica 14(3):809--834,
+  \urlprefix\url{https://www.jstor.org/stable/24307417}
+
+\bibitem[{Vehtari et~al.(2017)Vehtari, Gelman, and Gabry}]{Vehtari2017}
+Vehtari A, Gelman A, Gabry J (2017) Practical bayesian model evaluation using
+  leave-one-out cross-validation and waic. Stat Comput 27:1413–1432,
+  \doi{10.1007/s11222-016-9696-4}
+
+\bibitem[{Vehtari et~al.(2020)Vehtari, Gabry, Magnusson, Yao, Bürkner,
+  Paananen, and Gelman}]{Vehtari2020}
+Vehtari A, Gabry J, Magnusson M, Yao Y, Bürkner PC, Paananen T, Gelman A
+  (2020) loo: Efficient leave-one-out cross-validation and waic for bayesian
+  models. \urlprefix\url{https://mc-stan.org/loo/}, r package version 2.4.1
+
+\bibitem[{Voeten(2021)}]{buildmer2021}
+Voeten CC (2021) buildmer: Stepwise Elimination and Term Reordering for
+  Mixed-Effects Regression.
+  \urlprefix\url{https://CRAN.R-project.org/package=buildmer}, r package
+  version 1.8
+
+\bibitem[{Wang and Dey(2010)}]{Wang2010}
+Wang X, Dey D (2010) Generalized extreme value regression for binary response
+  data: an application to b2b electronic payments system adoption. The Annals
+  of Applied Statistics, 4:2000--2023
+
+\bibitem[{Watanabe(2010)}]{Watanabe2010}
+Watanabe S (2010) Asymptotic equivalence of bayes cross validation and widely
+  applicable information criterion in singular learning theory. Journal of
+  Machine Learning Research 11:3571--3594
+
+\bibitem[{Wulfsohn and Tsiatis(1997)}]{Wulfsohn1997}
+Wulfsohn MS, Tsiatis AA (1997) A joint model for survival and longitudinal data
+  measured with error. Biometrics 53(1):330--339,
+  \urlprefix\url{https://www.jstor.org/stable/2533118}
+
+\end{thebibliography}

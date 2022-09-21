@@ -1,0 +1,27 @@
+This repo provides example R code and Stan code used in the paper
+'Multilevel Bayesian joint modeling for a longitudinal marker and time-to-recurrent event to characterize heterogeneity in multi-center studies'. 
+
+With the code provided, the simulation for optimal joint model (association structure=current value, time scale=calendar) and corresponding two-stage method can be reproduced. 
+
+The other simulation scenarios can be reproduced by slightly modifying the code. 
+
+# Step 1. Generate simulated data
+
+Generate simulated data list simJD by running the function sim_recJData(). The output simJD is a list contains longitudinal data (datLong) and recurrent data (datRec) and other information. The details are provided in the ExampleCode.R
+
+# Step 2. Generate data list for Stan
+
+Generate a data list simSD from the function get_SIMstandata() by the inputs of simulated data in Step 1. 
+More details are provided in the ExampleCode.R
+
+# Step 3. Read Stan models
+
+Read in pre-defined Stan models by function cmdstan_model(). 
+
+# Step 4. Execute two-stage method & joint model
+
+Compile and run by model.name$sample(). 
+
+
+
+

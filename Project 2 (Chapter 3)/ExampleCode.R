@@ -300,12 +300,6 @@ simJD=sim_recJData(L = 6, n = 80, n_scl = 1.5, assoc='etavalue', time.scale='cal
 #Input# id_var @ id variable in datRec
 #Input# time_var @ time variable in datRec
 #Input# time.scale @ choices of risk scale: gap or calendar time
-
-stanList=list(dataQ=dataQ,
-              lme.fit=lme.fit,
-              standata.jm=standata,
-              staninit.jm=staninit)
-
 #Output# A data list contains:
 #Output# dataQ @ datRec at quadrature points;
 #Output# lme.fit @ lme fit results for longitudinal submodel;
@@ -475,9 +469,10 @@ get_SIMstandata <- function(datLong, datRec, seed, qnodes=7, assoc=c('etaslope',
 }
 
 ########################################################################
-simSD=get_SIMstandata(datLong=simJD$datLong, datRec=simJD$datRec, seed=simJD$seed, 
-                      qnodes=7, assoc='etavalue',id_var='id', time_var='time',
-                      time.scale='cal')
+simSD=get_SIMstandata(datLong=simJD$datLong, datRec=simJD$datRec, 
+                      seed=simJD$seed, qnodes=7, 
+                      assoc='etavalue', time.scale='cal',
+                      id_var='id', time_var='time')
 ########################################################################
 
 #Execute in Stan----
@@ -487,32 +482,35 @@ staninit.jm<- simSD$staninit.jm
 seed <- simJD$seed
 
 ##Read in Stan models
-###Note: stan file can be read by .txt or Rstudio
+###Note: 1. stan file can be edited by .txt or Rstudio
+###      2. save files in your working directory
 file.long <- file.path("LONG.stan")
-long.sim <- cmdstan_model(file.long)
+long.sim <- cmdstan_model(file.long) # model name
 
 file.event <- file.path("EVENT.stan")
-event.sim <- cmdstan_model(file.event)
+event.sim <- cmdstan_model(file.event) # model name
 
 file.jm <- file.path("JM.stan")
-jm.sim <- cmdstan_model(file.jm)
+jm.sim <- cmdstan_model(file.jm) # model name
 
 ##Two-stage Method
 
 ###Stage 1
 
 fit.long <- long.sim$sample(
-  data = standata.jm,
-  chains = 2, 
-  save_warmup = FALSE,
-  parallel_chains = 2,
-  refresh = 500,
-  adapt_delta=0.95,
-  max_treedepth=12,
-  seed=seed,
-  init = function() staninit.jm)
+    data = standata.jm,
+    chains = 2, 
+    save_warmup = FALSE,
+    parallel_chains = 2,
+    refresh = 500,
+    adapt_delta=0.95,
+    max_treedepth=12,
+    seed=seed,
+    init = function() staninit.jm
+  )
 
 ###Stage 2
+####Note: Need to update y1_eta_q & a_prior_scale from Stage 1 first
 
   y1_eta_q_extract <- suppressWarnings(fit.long$draws('y1_eta_q',format='df') %>% 
                                        select(-.chain, -.iteration, -.draw))
@@ -526,37 +524,36 @@ fit.long <- long.sim$sample(
     a_beta_scale <- get_scale_value(subdataQ$y1_eta_q)
     a_prior_scale[i] <- pmax(1e-12,2.5/a_beta_scale)
   }
-  
+ 
   standata.jm$a_prior_scale <- a_prior_scale
-  
   simSD$standata.jm=standata.jm
   staninit.jm$a_z_beta=staninit.jm$a_beta/a_prior_scale
   simSD$staninit.jm=staninit.jm
 
   fit.event <- event.sim$sample(
-    data = standata.jm,
-    chains = 2, 
-    save_warmup = FALSE,
-    parallel_chains = 2,
-    refresh = 500,
-    adapt_delta=0.95,
-    max_treedepth=12,
-    seed=seed,
-    init = function() staninit.jm
+      data = standata.jm,
+      chains = 2, 
+      save_warmup = FALSE,
+      parallel_chains = 2,
+      refresh = 500,
+      adapt_delta=0.95,
+      max_treedepth=12,
+      seed=seed,
+      init = function() staninit.jm
   )
   
 ##Joint model
-###Note: there might be some warnings, but safe to ignore as the chain will get converged afterwards  
+###Note: there might be some warnings, but they are safe to ignore as the chain will get converged afterwards  
 fit.jm <- jm.sim$sample(
-    data = standata.jm, #Note: this is the updated list from Stage 2
-    chains = 2, 
-    save_warmup = FALSE,
-    parallel_chains = 2,
-    refresh = 500,
-    adapt_delta=0.95,
-    max_treedepth=12,
-    seed=seed,
-    init = function() staninit.jm #Note: this is the updated list from Stage 2
+      data = standata.jm, #Note: this is the updated list from Stage 2
+      chains = 2, 
+      save_warmup = FALSE,
+      parallel_chains = 2,
+      refresh = 500,
+      adapt_delta=0.95,
+      max_treedepth=12,
+      seed=seed,
+      init = function() staninit.jm #Note: this is the updated list from Stage 2
   )
 
 ##Read estimates

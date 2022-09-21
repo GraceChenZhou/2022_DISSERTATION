@@ -16,11 +16,11 @@ More details are provided in the ExampleCode.R
 
 # Step 3. Read Stan models
 
-Read in pre-defined Stan models by function cmdstan_model(). 
+Read in pre-defined Stan models by function cmdstan_model()
 
 # Step 4. Execute two-stage method & joint model
 
-Compile and run by model.name$sample(). 
+Compile and run by model.name$sample()s
 
 
 

@@ -10,6 +10,13 @@
 + Download ExampleCode.R, ExampleCodeFunctions.R, Long.stan, Event.stan, JM.stan and place them in the same working directory folder
 +	Execute ExampleCode.R line by line
 
+# Supporting latex code
+
+## Dissertation
++ Folder: 
+## Defense
++ Folder: 
+
 ## Note
 +	If you are not familiar with R: https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf
 +	If you are not familiar with Rstan: https://mc-stan.org/rstan/

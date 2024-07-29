@@ -1,0 +1,133 @@
+\begin{thebibliography}{}
+
+\bibitem[Betancourt and Girolami, 2013]{Betancourt2013}
+Betancourt, M.~J. and Girolami, M. (2013).
+\newblock Hamiltonian monte carlo for hierarchical models.
+
+\bibitem[Brilleman et~al., 2018]{Brilleman2018}
+Brilleman, S., Crowther, M., Moreno-Betancur, M., {Buros Novik}, J., and
+  R~Wolfe, R. (2018).
+\newblock Joint longitudinal and time-to-event models via {Stan}.
+\newblock StanCon 2018. 10-12 Jan 2018. Pacific Grove, CA, USA.
+
+\bibitem[Gabry and Cešnovar, 2022]{Gabry2022}
+Gabry, J. and Cešnovar, R. (2022).
+\newblock {\em cmdstanr: R Interface to 'CmdStan'}.
+\newblock https://mc-stan.org/cmdstanr/, https://discourse.mc-stan.org.
+
+\bibitem[Gelman and Rubin, 1992]{Gelman1992}
+Gelman, A. and Rubin, D. (1992).
+\newblock Inference from iterative simulation using multiple sequences.
+\newblock {\em Statistical Science}, 7(4):457--511.
+
+\bibitem[Hickey et~al., 2018]{Hickey2018a}
+Hickey, G.~L., Philipson, P., and Jorgensen, A. (2018).
+\newblock joinerml: a joint model and software package for time-to-event and
+  multivariate longitudinal outcomes.
+\newblock {\em BMC Medical Research Methodology}, 18(1).
+
+\bibitem[Jiang et~al., 2013]{Jiang2013}
+Jiang, X., Dey, D.~K., Prunier, R., Wilson, A.~M., and Holsinger, K.~E. (2013).
+\newblock A new class of flexible link functions with application to species
+  co-occurrence in cape floristic region.
+\newblock {\em Ann. Appl. Stat.}, 7(4):2180--2204.
+
+\bibitem[Laurie, 1997]{Laurie1997}
+Laurie, D. (1997).
+\newblock Calculation of gauss-kronrod quadrature rules.
+\newblock {\em Math Comput}, 66(219):1133--45.
+
+\bibitem[Lewandowski et~al., 2009]{Lewandowski2009}
+Lewandowski, D., Dorota, K., and Harry, J. (2009).
+\newblock Generating random correlation matrices based on vines and extended
+  onion method.
+\newblock {\em Journal of Multivariate Analysis}, 100:1989–2001.
+
+\bibitem[Philipson et~al., 2018]{Philipson2018}
+Philipson, P., Sousa, I., Diggle, P.~J., Williamson, P., Kolamunnage-Dona, R.,
+  Henderson, R., and Hickey, G.~L. (2018).
+\newblock {\em {joineR}: Joint Modelling of Repeated Measurements and
+  Time-to-Event Data}.
+\newblock R package version 1.2.6.
+
+\bibitem[Proust-Lima et~al., 2022]{Proust-Lima2022}
+Proust-Lima, C., Philipps, V., Diakite, A., and Liquet, B. (2022).
+\newblock {\em lcmm: Extended Mixed Models Using Latent Classes and Latent
+  Processes}.
+\newblock R package version: 1.9.5.
+
+\bibitem[Rizopoulos, 2010]{Rizopoulos2010}
+Rizopoulos, D. (2010).
+\newblock Jm: An r package for the joint modelling of longitudinal and
+  time-to-event data.
+\newblock {\em Journal of Statistical Software}, 35(9):1--33.
+
+\bibitem[Rizopoulos, 2011]{Rizopoulos2011}
+Rizopoulos, D. (2011).
+\newblock Dynamic predictions and prospective accuracy in joint models for
+  longitudinal and time-to-event data.
+\newblock {\em Biometrics}, 67(3):819--829.
+
+\bibitem[Rizopoulos, 2016]{Rizopoulos2016}
+Rizopoulos, D. (2016).
+\newblock The r package jmbayes for fitting joint models for longitudinal and
+  time-to-event data using mcmc. journal of statistical software.
+\newblock {\em Journal of Statistical Software}, 72(7):1--46.
+
+\bibitem[Rizopoulos et~al., 2022]{Rizopoulos2022}
+Rizopoulos, D., Papageorgiou, G., and {Miranda Afonso}, P. (2022).
+\newblock {\em JMbayes2: Extended Joint Models for Longitudinal and
+  Time-to-Event Data}.
+\newblock https://drizopoulos.github.io/JMbayes2/,
+  https://github.com/drizopoulos/JMbayes2.
+
+\bibitem[Rondeau et~al., 2019]{Rondeau2019}
+Rondeau, V., Gonzalez, J.~R., Mazroui, Y., Mauguen, A., Diakite, A., Laurent,
+  A., Lopez, M., Kr\'{o}l, A., and Sofeu, C.~L. (2019).
+\newblock {\em {frailtypack}: General Frailty Models: Shared, Joint and Nested
+  Frailty Models with Prediction; Evaluation of Failure-Time Surrogate
+  Endpoints}.
+\newblock {R} package version 3.0.3.
+
+\bibitem[Rondeau et~al., 2012]{Rondeau2012}
+Rondeau, V., Mazroui, Y., and Gonzalez, J.~R. (2012).
+\newblock {frailtypack}: An {{R}} package for the analysis of correlated
+  survival data with frailty models using penalized likelihood estimation or
+  parametrical estimation.
+\newblock {\em Journal of Statistical Software}, 47(4):1--28.
+
+\bibitem[Spiegelhalter et~al., 2002]{Spiegelhalter2002}
+Spiegelhalter, D.~J., Best, N.~G., Carlin, B.~P., and van~der Linde, A. (2002).
+\newblock Bayesian measures of model complexity and fit.
+\newblock {\em J. Roy. Stat. Soc. B}, 64(4):583--639.
+
+\bibitem[{Stan Development Team}, 2019]{StanManual}
+{Stan Development Team} (2011-2019).
+\newblock {\em Stan Modeling Language Users Guide and Reference Manual}.
+\newblock Version 2.29.
+
+\bibitem[{Stan Development Team}, 2020]{Rstan2020}
+{Stan Development Team} (2020).
+\newblock {\em Rstan: the R interface to Stan}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
+\newblock R package version 2.21.2.
+
+\bibitem[Vehtari et~al., 2017]{Vehtari2017}
+Vehtari, A., Gelman, A., and Gabry, J. (2017).
+\newblock Practical bayesian model evaluation using leave-one-out
+  cross-validation and waic.
+\newblock {\em Stat Comput}, 27:1413–1432.
+
+\bibitem[Wang and Dey, 2010]{Wang2010}
+Wang, X. and Dey, D. (2010).
+\newblock Generalized extreme value regression for binary response data: an
+  application to b2b electronic payments system adoption.
+\newblock {\em The Annals of Applied Statistics,}, 4:2000--2023.
+
+\bibitem[Watanabe, 2010]{Watanabe2010}
+Watanabe, S. (2010).
+\newblock Asymptotic equivalence of bayes cross validation and widely
+  applicable information criterion in singular learning theory.
+\newblock {\em Journal of Machine Learning Research}, 11:3571--3594.
+
+\end{thebibliography}

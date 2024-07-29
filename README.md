@@ -13,9 +13,9 @@
 # Supporting latex code
 
 ## Dissertation
-+ Folder: 
++ Folder: Dissertation_Zhou_Final_tex
 ## Defense
-+ Folder: 
++ Folder: Latex
 
 ## Note
 +	If you are not familiar with R: https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf
